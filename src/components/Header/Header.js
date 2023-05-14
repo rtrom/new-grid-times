@@ -29,7 +29,18 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
+          <MainHeaderActionGroup>
+            <button>
+              <Search size={24} />
+            </button>
+            <button>
+              <Menu size={24} />
+            </button>
+          </MainHeaderActionGroup>
         <Logo />
+        <HeaderButton>
+          Subscribe
+        </HeaderButton>
       </MainHeader>
     </header>
   );
@@ -39,6 +50,10 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
@@ -65,6 +80,27 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+
+  @media ${QUERIES.laptopAndUp} {
+    justify-content: space-between;
+  }
 `;
 
+const MainHeaderActionGroup = styled(ActionGroup)`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
+    justify-content: flex-start;
+  }
+`;
+
+const HeaderButton = styled(Button)`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: revert;
+  }
+
+`;
 export default Header;

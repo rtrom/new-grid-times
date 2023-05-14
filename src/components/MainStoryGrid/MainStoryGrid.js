@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-
 import {
   MAIN_STORY,
   OPINION_STORIES,
@@ -12,6 +11,7 @@ import MainStory from '../MainStory';
 import SecondaryStory from '../SecondaryStory';
 import OpinionStory from '../OpinionStory';
 import Advertisement from '../Advertisement';
+import { QUERIES } from '../../constants';
 
 const MainStoryGrid = () => {
   return (
@@ -53,6 +53,10 @@ const Wrapper = styled.div`
     'advertisement';
   gap: 48px;
   margin-bottom: 48px;
+
+  @media ${QUERIES.laptopAndUp} {
+
+  }
 `;
 
 const MainStorySection = styled.section`
